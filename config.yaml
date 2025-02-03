@@ -1,0 +1,16 @@
+server:
+  host: "localhost"
+  port: "8080"
+  environment: "development"
+
+mongodb:
+  uri: "mongodb+srv://greeneye-be-development:${MONGODB_PASSWORD}@greeneye-be-development.tc5bs.mongodb.net/?retryWrites=true&w=majority&appName=greeneye-be-development"
+  database: "greeneye-be"
+  auth_mechanism: "SCRAM-SHA-1"
+
+redis:
+  uri: ${REDIS_URI}
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 72

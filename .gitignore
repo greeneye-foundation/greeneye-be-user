@@ -1,0 +1,27 @@
+# .gitignore
+
+# Binaries
+bin/
+tmp/
+
+# Environment variables
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Dependency directories
+vendor/
+
+# Log files
+*.log
+
+# Air tmp files
+tmp/
+
+# Test cache
+*.test
+
+# macOS specific
+.DS_Store
