@@ -15,6 +15,13 @@ import (
 	"github.com/greeneye-foundation/greeneye-be-user/internal/router"
 )
 
+// cmd/api/main.go
+// @title           GreenEye User Management API
+// @version         1.0
+// @description     User management microservice
+// @host            localhost:8080
+// @BasePath        /api/v1
+// @schemes         http https
 func main() {
 	// Initialize logger
 	environment := os.Getenv("APP_ENV")

@@ -1,0 +1,33 @@
+# .github/workflows/api-docs.yml
+name: API Documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+    
+    - name: Generate Swagger Docs
+      run: make swagger
+    
+    - name: Generate Postman Collection
+      run: make postman
+    
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: api-docs
+        path: |
+          docs/swagger
+          postman_collection.json

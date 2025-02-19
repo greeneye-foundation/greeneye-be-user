@@ -22,6 +22,16 @@ func NewUserHandler(userService *services.UserService) *UserHandler {
 	}
 }
 
+// RegisterUser godoc
+// @Summary Create a new user
+// @Description Register a new user in the system
+// @Tags users
+// @Accept  json
+// @Produce  json
+// @Param   user body models.RegisterUserRequest true "User Creation Details"
+// @Success 201 {object} models.UserResponse
+// @Failure 400 {object} errors.ErrorResponse
+// @Router /users [post]
 func (h *UserHandler) RegisterUser(c *gin.Context) {
 	log := logger.GetLogger()
 	var registration models.UserRegistration

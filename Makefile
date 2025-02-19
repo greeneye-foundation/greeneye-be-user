@@ -30,3 +30,19 @@ update:
 # Generate API documentation (if you're using swag)
 docs:
 	swag init -g cmd/api/main.go -o api/docs
+
+generate-postman:
+	go run tools/generate_postman_collection.go
+
+# Generate Swagger documentation
+swagger:
+	@echo "Generating Swagger documentation..."
+	./generate_swagger.sh
+
+# Generate Postman collection
+postman:
+	@echo "Generating Postman collection..."
+	go run tools/generate_postman.go
+
+# Combined documentation generation
+docs: swagger postman
