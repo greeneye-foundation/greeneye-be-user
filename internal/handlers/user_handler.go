@@ -28,9 +28,8 @@ func NewUserHandler(userService *services.UserService) *UserHandler {
 // @Tags users
 // @Accept  json
 // @Produce  json
-// @Param   user body models.RegisterUserRequest true "User Creation Details"
-// @Success 201 {object} models.UserResponse
-// @Failure 400 {object} errors.ErrorResponse
+// @Param   user body models.UserRegistration true "User Creation Details"
+// @Success 201 {object} models.User
 // @Router /users [post]
 func (h *UserHandler) RegisterUser(c *gin.Context) {
 	log := logger.GetLogger()

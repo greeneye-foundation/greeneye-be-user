@@ -1,12 +1,12 @@
 // internal/docs/swagger.go
-package docs
+package swagger
 
 import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	_ "github.com/greeneye-foundation/greeneye-be-user/docs/swagger" // swagger docs
+	_ "github.com/greeneye-foundation/greeneye-be-user/docs" //Import the docs generated file
 )
 
 // @title           GreenEye User Management API
@@ -17,18 +17,4 @@ import (
 
 func SetupSwagger(router *gin.Engine) {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-}
-
-// Example Annotated Handler
-// @Summary     Register User
-// @Description Create a new user account
-// @Tags        Authentication
-// @Accept      json
-// @Produce     json
-// @Param       request body models.UserRegistration true "User Registration"
-// @Success     200 {object} models.UserResponse
-// @Failure     400 {object} models.ErrorResponse
-// @Router      /auth/register [post]
-func RegisterUserHandler(c *gin.Context) {
-	// Handler implementation
 }
