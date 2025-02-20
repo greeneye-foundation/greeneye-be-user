@@ -35,7 +35,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.UserRegistration"
+                            "$ref": "#/definitions/github_com_greeneye-foundation_greeneye-be-user_internal_models.UserRegistration"
                         }
                     }
                 ],
@@ -43,7 +43,7 @@ const docTemplate = `{
                     "201": {
                         "description": "Created",
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/github_com_greeneye-foundation_greeneye-be-user_internal_models.User"
                         }
                     }
                 }
@@ -51,7 +51,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "models.User": {
+        "github_com_greeneye-foundation_greeneye-be-user_internal_models.User": {
             "type": "object",
             "required": [
                 "country_code",
@@ -87,7 +87,7 @@ const docTemplate = `{
                 }
             }
         },
-        "models.UserRegistration": {
+        "github_com_greeneye-foundation_greeneye-be-user_internal_models.UserRegistration": {
             "type": "object",
             "required": [
                 "country_code",

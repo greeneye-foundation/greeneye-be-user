@@ -1,6 +1,6 @@
 basePath: /api/v1
 definitions:
-  models.User:
+  github_com_greeneye-foundation_greeneye-be-user_internal_models.User:
     properties:
       country_code:
         type: string
@@ -24,7 +24,7 @@ definitions:
     - country_code
     - mobile_number
     type: object
-  models.UserRegistration:
+  github_com_greeneye-foundation_greeneye-be-user_internal_models.UserRegistration:
     properties:
       country_code:
         type: string
@@ -60,14 +60,14 @@ paths:
         name: user
         required: true
         schema:
-          $ref: '#/definitions/models.UserRegistration'
+          $ref: '#/definitions/github_com_greeneye-foundation_greeneye-be-user_internal_models.UserRegistration'
       produces:
       - application/json
       responses:
         "201":
           description: Created
           schema:
-            $ref: '#/definitions/models.User'
+            $ref: '#/definitions/github_com_greeneye-foundation_greeneye-be-user_internal_models.User'
       summary: Create a new user
       tags:
       - users
